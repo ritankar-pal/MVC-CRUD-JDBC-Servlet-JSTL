@@ -152,8 +152,6 @@ public class ControllerServlet extends HttpServlet {
 			student.setSaddress(saddress);
 			
 			String status = studentService.updateStudent(student);
-			PrintWriter out = response.getWriter();
-			
 			
 			RequestDispatcher reqDisp = null;
 			if(status.equals("success")) {
@@ -165,7 +163,6 @@ public class ControllerServlet extends HttpServlet {
 				reqDisp = request.getRequestDispatcher("../../updatefailure.html");
 				reqDisp.forward(request, response);
 			}
-			out.close();
 		}
 		
 	}
